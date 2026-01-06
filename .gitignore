@@ -7,10 +7,27 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies & build
 node_modules
 dist
 dist-ssr
 *.local
+
+# Environment & config files (IMPORTANT)
+.env
+.env.*
+bun.lockb
+components.json
+eslint.config.js
+lovable.json
+netlify.toml
+postcss.config.js
+tailwind.config.js
+tailwind.config.ts
+tsconfig.json
+tsconfig.node.json
+vercel.json
+vite.config.ts
 
 # Editor directories and files
 .vscode/*
