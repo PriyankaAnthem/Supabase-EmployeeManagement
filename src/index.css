@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* -----------------------------
+     Global Styles
+  ------------------------------ */
+  body {
+    @apply font-sans text-gray-800;
+    background: linear-gradient(-45deg, #ffffff);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+  }
+
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  h1, h2, h3, h4 {
+    color: #001E6C; /* dark blue like the logo */
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    line-height: 1.3;
+  }
+
+  p, li {
+    color: #000000; /* normal text */
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  /* -----------------------------
+     Card Styles
+  ------------------------------ */
+  .card {
+    @apply rounded-2xl p-6 transition-all duration-300;
+    background-color: #ffffff;
+    color: #001E6C;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .dashboard-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    background-color: #001E6C;
+    color: #ffffff !important;
+  }
+
+  .light-card {
+    background-color: #ffffff !important;
+    color: #001E6C !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  /* -----------------------------
+     Buttons
+  ------------------------------ */
+  button {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+    background-color: #001E6C; /* Dark Blue */
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  button:hover {
+    background-color: #0034A5; /* Slightly lighter blue */
+    font-weight: 700;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  /* -----------------------------
+     Links
+  ------------------------------ */
+  a {
+    color: #001E6C;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  a:hover {
+    color: #0034A5;
+  }
+
+  /* -----------------------------
+     Forms
+  ------------------------------ */
+  input, textarea, select {
+    @apply w-full px-4 py-3 rounded-lg border border-gray-300;
+    background-color: #ffffff;
+    color: #001E6C;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    border-color: #001E6C;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 30, 108, 0.3);
+  }
+
+  [data-radix-dialog-content],
+  [data-radix-select-content] {
+    background-color: #ffffff !important;
+    color: #001E6C !important;
+    border-radius: 0.75rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  /* -----------------------------
+     Inline Messages
+  ------------------------------ */
+  .message {
+    @apply text-sm min-h-[1.25rem] transition-all duration-200;
+  }
+
+  .message.error   { @apply text-red-600; }
+  .message.warning { @apply text-yellow-600; }
+  .message.info    { @apply text-blue-600; }
+  .message.success { @apply text-green-600; }
+
+  /* -----------------------------
+     Toast Notifications
+  ------------------------------ */
+  .toast-container {
+    @apply fixed top-5 right-5 z-[9999] flex flex-col gap-3;
+  }
+
+  .toast {
+    @apply px-4 py-3 rounded-lg shadow-lg text-white font-medium animate-fade-in-up;
+  }
+
+  .toast.success { @apply bg-green-600; }
+  .toast.error   { @apply bg-red-600; }
+  .toast.info    { @apply bg-blue-600; }
+  .toast.warning { @apply bg-yellow-600 text-black; }
+
+  @keyframes fade-in-up {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in-up {
+    animation: fade-in-up 0.4s ease-out;
+  }
+}
